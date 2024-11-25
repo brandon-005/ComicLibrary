@@ -1,0 +1,59 @@
+html {
+	overflow-x: hidden;
+}
+
+body {
+	background-color: #0b0b0c;
+	font-family: 'Montserrat', sans-serif;
+}
+
+h1,
+h2,
+h3,
+a,
+p {
+	color: white !important;
+}
+
+.navbar-brand {
+	font-weight: 700;
+	font-size: 1.8rem;
+}
+
+.navbar-brand span {
+	font-weight: 500;
+}
+
+.search-box {
+	background-color: #2c2e32;
+	border-color: #2c2e32;
+}
+
+.box {
+	background-color: #151515;
+	border-radius: 10px;
+}
+
+.box h2 {
+	opacity: 0.4;
+	font-size: 0.95rem;
+	font-weight: 600;
+}
+
+.box ul {
+	list-style-type: none;
+	padding: 0;
+}
+
+.box button {
+	background: none;
+	border: none;
+	color: white;
+	font-weight: 600;
+	font-size: 0.9rem;
+}
+
+.results-info h1 {
+	font-weight: 700;
+	font-size: 1.8rem;
+}
