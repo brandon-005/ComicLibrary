@@ -54,9 +54,9 @@ p {
 }
 
 .active {
-    background-color: #4b4b4b!important;
-    border-radius: 8px;
-    padding-right: 20px;
+	background-color: #4b4b4b !important;
+	border-radius: 8px;
+	padding-right: 20px;
 }
 
 .results-info h1 {
@@ -65,39 +65,40 @@ p {
 }
 
 .sort-menu {
-    color: white;
-    font-weight: 500;
-    float: right;
+	color: white;
+	font-weight: 500;
+	float: right;
 }
 
 .sort-menu select {
-    background: none;
-    border: none;
-    color: white;
-    font-weight: 700;
+	background: none;
+	border: none;
+	color: white;
+	font-weight: 700;
 }
 
 .sort-menu option {
-    color: black;
+	color: black;
 }
 
 .comic-info img {
-    width: 12rem;
-    height: 15rem;
+	width: 12rem;
+	height: 15rem;
+	border-radius: 10px 10px 0 0;
 }
 
 .comic-info {
-    background-color: #151515;
-    border-radius: 10px;
-    width: 12rem;
+	background-color: #151515;
+	border-radius: 10px;
+	width: 12rem;
 }
 
 .comic-info h1 {
-    font-weight: 800;
-    font-size: 1rem;
+	font-weight: 800;
+	font-size: 1rem;
 }
 
 .comic-info h2 {
-    font-weight: 500;
-    font-size: 0.8rem;
+	font-weight: 500;
+	font-size: 0.8rem;
 }

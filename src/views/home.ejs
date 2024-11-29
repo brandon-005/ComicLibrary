@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>ComicLib | Browse</title>
+
+		<!-- FONT -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+			rel="stylesheet"
+		/>
+
+		<!-- BOOTSTRAP CDN -->
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+			crossorigin="anonymous"
+		/>
+
+		<!-- FONT AWESOME -->
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+			integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
+
+		<!-- STYLESHEET -->
+		<link rel="stylesheet" href="assets/css/home.css" />
+	</head>
+	<body>
+		<!-- NAVIGATION -->
+		<div class="container">
+			<nav class="navbar mt-5 justify-content-between">
+				<a class="navbar-brand">Comic<span>Lib</span></a>
+				<form name="searchBox" class="form-inline">
+					<input
+						class="search-box form-control pt-2 pb-2 pe-5"
+						type="search"
+						name="query"
+						placeholder="🔍 Search a comic"
+						aria-label="Search"
+					/>
+					
+				</form>
+			</nav>
+
+			<div class="row mt-5">
+				<div class="col-lg-2 col-md-3 col-sm-12">
+					<div class="box ps-3 pt-3 pb-5">
+						<h2 class="mb-3">Browse</h2>
+						<ul>
+							<li>
+								<button class="active">
+									<i class="fa-solid fa-compass me-3"></i>Action
+								</button>
+							</li>
+							<li>
+								<button>
+									<i class="fa-solid fa-person-rifle me-3 mt-3"></i>Fighting
+								</button>
+							</li>
+							<li>
+								<button>
+									<i class="fa-solid fa-chess me-3 mt-3"></i>Strategy
+								</button>
+							</li>
+						</ul>
+						<h2 class="mt-4 mb-3">Your Books</h2>
+						<ul>
+							<li>
+								<button><i class="fa-solid fa-compass me-3"></i>Action</button>
+							</li>
+							<li>
+								<button>
+									<i class="fa-solid fa-person-rifle me-3 mt-3"></i>Fighting
+								</button>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="col-lg-10">
+					<div class="row">
+						<div class="results-info mb-3">
+							<div class="row">
+								<div class="col-lg-6"><h1>Action Results</h1></div>
+								<div class="col-lg-6">
+									<form class="sort-menu">
+										<label for="sort">Sort By:</label>
+										<select name="sort" id="sortby">
+											<option value="Popularity">Popularity</option>
+											<option value="Alphabetical">Alphabetical</option>
+										</select>
+									</form>
+								</div>
+							</div>
+						</div>
+
+						<!-- IF A SEARCH HAS BEEN MADE, FILTER RESULTS BY SEARCH QUERY -->
+						<% if (query.query) { %>
+							<% dataFile.forEach((comicData) => { %>
+								<% if (comicData.name.toLowerCase().includes(query.query.toLowerCase())) { %>
+									<div class="col-lg-3">
+										<div class="comic-info">
+											<img src="<%= comicData.image %>" alt="" srcset="" />
+											<h1 class="ps-2 mt-3"><%= comicData.name %></h1>
+											<h2 class="ps-2"><%= comicData.volume %></h2>
+											<h1 class="ps-2 mb-3 pb-3"><%= comicData.price %></h1>
+										</div>
+									</div>
+								<% } %>
+							<% }) %>
+							<!-- WHEN SEARCHING, ALLOW USER TO VIEW ALL COMICS AGAIN -->
+							<a href="/">View All Comics</a>
+
+							<!-- IF NO SEARCH HAS BEEN MADE, DISPLAY ALL COMICS -->
+							<% } else { %>
+								<% dataFile.forEach((comicData) => { %>
+										<div class="col-lg-3">
+											<div class="comic-info">
+												<img src="<%= comicData.image %>" alt="" srcset="" />
+												<h1 class="ps-2 mt-3"><%= comicData.name %></h1>
+												<h2 class="ps-2"><%= comicData.volume %></h2>
+												<h1 class="ps-2 mb-3 pb-3"><%= comicData.price %></h1>
+											</div>
+										</div>
+								<% }) %>
+							<% } %>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

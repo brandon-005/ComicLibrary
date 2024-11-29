@@ -1,0 +1,28 @@
+{
+  "name": "comiclibrary",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brandon-005/ComicLibrary.git"
+  },
+  "keywords": [
+    "nodejs",
+    "comiclibrary",
+    "json"
+  ],
+  "author": "Brandon Gilbertson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brandon-005/ComicLibrary/issues"
+  },
+  "homepage": "https://github.com/brandon-005/ComicLibrary#readme",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.21.1"
+  }
+}
