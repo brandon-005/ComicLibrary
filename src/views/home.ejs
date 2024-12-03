@@ -85,28 +85,16 @@
 					</div>
 				</div>
 
-				<div class="col-lg-10">
-					<div class="row">
-						<div class="results-info mb-3">
-							<div class="row">
-								<div class="col-lg-6"><h1>Action Results</h1></div>
-								<div class="col-lg-6">
-									<form class="sort-menu">
-										<label for="sort">Sort By:</label>
-										<select name="sort" id="sortby">
-											<option value="Popularity">Popularity</option>
-											<option value="Alphabetical">Alphabetical</option>
-										</select>
-									</form>
-								</div>
-							</div>
-						</div>
+				<div class="col-lg-10 col-md-9">
+					<h1 class="results-text mb-4 mt-sm-4 mt-md-0">Action Results</h1>
+	
 
+					<div class="row">
 						<!-- IF A SEARCH HAS BEEN MADE, FILTER RESULTS BY SEARCH QUERY -->
-						<% if (query.query) { %>
+						<% if (userSearch.query) { %>
 							<% dataFile.forEach((comicData) => { %>
-								<% if (comicData.name.toLowerCase().includes(query.query.toLowerCase())) { %>
-									<div class="col-lg-3">
+								<% if (comicData.name.toLowerCase().includes(userSearch.query.toLowerCase())) { %>
+									<div class="col-lg-3 col-md-5 mb-3 d-flex justify-content-center">
 										<div class="comic-info">
 											<img src="<%= comicData.image %>" alt="" srcset="" />
 											<h1 class="ps-2 mt-3"><%= comicData.name %></h1>
@@ -117,12 +105,12 @@
 								<% } %>
 							<% }) %>
 							<!-- WHEN SEARCHING, ALLOW USER TO VIEW ALL COMICS AGAIN -->
-							<a href="/">View All Comics</a>
+							<a href="/" class="text-center mb-3 mt-3">View All Comics</a>
 
 							<!-- IF NO SEARCH HAS BEEN MADE, DISPLAY ALL COMICS -->
 							<% } else { %>
 								<% dataFile.forEach((comicData) => { %>
-										<div class="col-lg-3">
+										<div class="col-lg-3 col-md-5 col-sm-6 mb-3 d-flex justify-content-center">
 											<div class="comic-info">
 												<img src="<%= comicData.image %>" alt="" srcset="" />
 												<h1 class="ps-2 mt-3"><%= comicData.name %></h1>
@@ -134,6 +122,7 @@
 							<% } %>
 					</div>
 				</div>
+			</div>
 			</div>
 		</div>
 	</body>
