@@ -50,50 +50,41 @@
 				</form>
 			</nav>
 
-			<div class="row mt-5">
+				<div class="row mt-5">
 				<div class="col-lg-2 col-md-3 col-sm-12">
 					<div class="box ps-3 pt-3 pb-5">
-						<h2 class="mb-3">Browse</h2>
+						<h2>Browse</h2>
 						<ul>
-							<li>
-								<button class="active">
-									<i class="fa-solid fa-compass me-3"></i>Action
-								</button>
-							</li>
-							<li>
-								<button>
-									<i class="fa-solid fa-person-rifle me-3 mt-3"></i>Fighting
-								</button>
-							</li>
-							<li>
-								<button>
-									<i class="fa-solid fa-chess me-3 mt-3"></i>Strategy
-								</button>
-							</li>
-						</ul>
-						<h2 class="mt-4 mb-3">Your Books</h2>
-						<ul>
-							<li>
-								<button><i class="fa-solid fa-compass me-3"></i>Action</button>
-							</li>
-							<li>
-								<button>
-									<i class="fa-solid fa-person-rifle me-3 mt-3"></i>Fighting
-								</button>
-							</li>
+							<!-- FOR EACH CATEGORY, CREATE LINK SO USER CAN CLICK, AND FIND OUT CURRENT CATEGORY TO GIVE THE ACTIVE STYLING TO IT -->
+							<% [{ name: 'action', icon: 'fa-compass' }, { name: 'fighting', icon: 'fa-person-rifle' }, { name: 'horror', icon: 'fa-spider' }].forEach((category) => { %>
+								<%	if (category.name === sort) { %>
+								</li>
+									<a href="/<%=category.name%>" class="category-links active">
+										<i class="fa-solid <%= category.icon %> me-3 mt-3"></i><%= sort %>
+									</a>
+								</li>
+								<%	} else { %>
+								<li>
+									<a href="/<%=category.name%>" class="category-links">
+										<i class="fa-solid <%= category.icon %> me-3 mt-3"></i><%= category.name %>
+									</a>
+								</li>
+								<%	} %>
+						<% }) %>
 						</ul>
 					</div>
 				</div>
 
 				<div class="col-lg-10 col-md-9">
-					<h1 class="results-text mb-4 mt-sm-4 mt-md-0">Action Results</h1>
+					<h1 class="results-text mb-4 mt-sm-4 mt-md-0"><%= sort %> Results</h1>
 	
 
 					<div class="row">
 						<!-- IF A SEARCH HAS BEEN MADE, FILTER RESULTS BY SEARCH QUERY -->
 						<% if (userSearch.query) { %>
 							<% dataFile.forEach((comicData) => { %>
-								<% if (comicData.name.toLowerCase().includes(userSearch.query.toLowerCase())) { %>
+								<!-- If search includes comic name and comic is in the correct category -->
+								<% if (comicData.category === sort && comicData.name.toLowerCase().includes(userSearch.query.toLowerCase())) { %>
 									<div class="col-lg-3 col-md-5 mb-3 d-flex justify-content-center">
 										<div class="comic-info">
 											<img src="<%= comicData.image %>" alt="" srcset="" />
@@ -105,11 +96,12 @@
 								<% } %>
 							<% }) %>
 							<!-- WHEN SEARCHING, ALLOW USER TO VIEW ALL COMICS AGAIN -->
-							<a href="/" class="text-center mb-3 mt-3">View All Comics</a>
+							<a href="/<%= sort %>" class="text-center mb-3 mt-3">View all <%= sort %> comics</a>
 
 							<!-- IF NO SEARCH HAS BEEN MADE, DISPLAY ALL COMICS -->
 							<% } else { %>
 								<% dataFile.forEach((comicData) => { %>
+									<% if (comicData.category === sort) { %>
 										<div class="col-lg-3 col-md-5 col-sm-6 mb-3 d-flex justify-content-center">
 											<div class="comic-info">
 												<img src="<%= comicData.image %>" alt="" srcset="" />
@@ -118,6 +110,7 @@
 												<h1 class="ps-2 mb-3 pb-3"><%= comicData.price %></h1>
 											</div>
 										</div>
+									<% } %>
 								<% }) %>
 							<% } %>
 					</div>

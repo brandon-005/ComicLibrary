@@ -7,10 +7,24 @@
         "category": "action"
     },
     {
+        "name": "Batman",
+        "volume": "Series 1, Vol 2 3",
+        "price": "£9.99",
+        "image": "assets/images/Batman_Vol_2_3.webp",
+        "category": "action"
+    },
+    {
         "name": "Superman",
         "volume": "Series 1, Vol 1 2",
         "price": "£15.99",
         "image": "assets/images/Superman_Vol_1_2.webp",
+        "category": "action"
+    },
+    {
+        "name": "Batman",
+        "volume": "Series 1, Vol 2 2",
+        "price": "£9.99",
+        "image": "assets/images/Batman_Vol_2_2.webp",
         "category": "action"
     },
     {
@@ -28,18 +42,53 @@
         "category": "action"
     },
     {
-        "name": "Batman",
-        "volume": "Series 1, Vol 2 2",
-        "price": "£9.99",
-        "image": "assets/images/Batman_Vol_2_2.webp",
-        "category": "action"
+        "name": "Spiderman",
+        "volume": "Series 2, Vol 1 1",
+        "price": "£29.99",
+        "image": "assets/images/Spiderman_Vol_2_2.jpg",
+        "category": "fighting"
     },
     {
-        "name": "Batman",
-        "volume": "Series 1, Vol 2 3",
-        "price": "£9.99",
-        "image": "assets/images/Batman_Vol_2_3.webp",
-        "category": "action"
+        "name": "Deadpool: End Of An Error",
+        "volume": "Series 3, Vol 2 1",
+        "price": "£15.99",
+        "image": "assets/images/Deadpool_Vol_2_1.jpg",
+        "category": "fighting"
+    },
+    {
+        "name": "Predator Vs Wolverine",
+        "volume": "Series 1, Vol 1 1",
+        "price": "£2.99",
+        "image": "assets/images/PredatorVsWolverine_Vol_1_1.jpg",
+        "category": "fighting"
+    },
+    {
+        "name": "Transformers",
+        "volume": "Series 1, Vol 1 1",
+        "price": "£7.99",
+        "image": "assets/images/Transformers_Vol_1_1.jpg",
+        "category": "fighting"
+    },
+    {
+        "name": "Venom Vs Carnage",
+        "volume": "Series 1, Vol 1 1",
+        "price": "£8.99",
+        "image": "assets/images/VenomVsCarnage_Vol_1_1.jpg",
+        "category": "fighting"
+    },
+    {
+        "name": "The Walking Dead",
+        "volume": "Series 1, Vol 1 1",
+        "price": "£29.99",
+        "image": "assets/images/WalkingDead_Vol_1_1.jpg",
+        "category": "horror"
+    },
+    {
+        "name": "Refrigerator Full Of Heads",
+        "volume": "Series 1, Vol 1 1",
+        "price": "£5.99",
+        "image": "assets/images/RFOH_Vol_1_1.webp",
+        "category": "horror"
     }
     
 ]
