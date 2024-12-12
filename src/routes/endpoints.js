@@ -19,7 +19,15 @@ TITLE: Action Comics Page (Home)
 URL: http://localhost:3000/
 */
 router.get('/', async (request, response) => {
-    response.send(await renderEjsFile('home.ejs', { userSearch: request.query, dataFile, sort: 'action' }));
+    response.send(await renderEjsFile('home.ejs', { userSearch: request.query, dataFile, sort: 'all' }));
+});
+
+/* 
+TITLE: All Comics Page
+URL: http://localhost:3000/all
+*/
+router.get('/all', async (request, response) => {
+    response.send(await renderEjsFile('home.ejs', { userSearch: request.query, dataFile, sort: 'all' }));
 });
 
 /* 

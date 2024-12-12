@@ -56,7 +56,7 @@
 						<h2>Browse</h2>
 						<ul>
 							<!-- FOR EACH CATEGORY, CREATE LINK SO USER CAN CLICK, AND FIND OUT CURRENT CATEGORY TO GIVE THE ACTIVE STYLING TO IT -->
-							<% [{ name: 'action', icon: 'fa-compass' }, { name: 'fighting', icon: 'fa-person-rifle' }, { name: 'horror', icon: 'fa-spider' }].forEach((category) => { %>
+							<% [{ name: 'all', icon: 'fa-compass' }, { name: 'action', icon: 'fa-user-ninja' }, { name: 'fighting', icon: 'fa-person-rifle' }, { name: 'horror', icon: 'fa-spider' }].forEach((category) => { %>
 								<%	if (category.name === sort) { %>
 								</li>
 									<a href="/<%=category.name%>" class="category-links active">
@@ -84,7 +84,7 @@
 						<% if (userSearch.query) { %>
 							<% dataFile.forEach((comicData) => { %>
 								<!-- If search includes comic name and comic is in the correct category -->
-								<% if (comicData.category === sort && comicData.name.toLowerCase().includes(userSearch.query.toLowerCase())) { %>
+								<% if (comicData.category === sort && comicData.name.toLowerCase().includes(userSearch.query.toLowerCase()) || sort === 'all' && comicData.name.toLowerCase().includes(userSearch.query.toLowerCase())) { %>
 									<div class="col-lg-3 col-md-5 mb-3 d-flex justify-content-center">
 										<div class="comic-info">
 											<img src="<%= comicData.image %>" alt="" srcset="" />
@@ -101,7 +101,7 @@
 							<!-- IF NO SEARCH HAS BEEN MADE, DISPLAY ALL COMICS -->
 							<% } else { %>
 								<% dataFile.forEach((comicData) => { %>
-									<% if (comicData.category === sort) { %>
+									<% if (comicData.category === sort || sort === 'all') { %>
 										<div class="col-lg-3 col-md-5 col-sm-6 mb-3 d-flex justify-content-center">
 											<div class="comic-info">
 												<img src="<%= comicData.image %>" alt="" srcset="" />
